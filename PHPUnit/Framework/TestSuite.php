@@ -703,6 +703,10 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
                         $name = $tmp[1];
                     }
 
+                    if ($test instanceof  PHPUnit_Framework_Warning) {
+                    	$name = $test->getMessage();                    
+                    }
+
                     if (preg_match($filter, $name) == 0) {
                         $runTest = FALSE;
                     }
